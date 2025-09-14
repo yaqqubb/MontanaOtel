@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Otel.DAL.DataContext;
+using System.Linq;
 
 namespace Otel.UI.Controllers
 {
@@ -12,14 +13,25 @@ namespace Otel.UI.Controllers
         {
             _context = context;
         }
+
         public IActionResult Index()
         {
-            var offers = _context.SpecialOffers.ToList();
-            return View(offers);
+            // Initial page load; data is fetched via AJAX later
+            return View();
         }
-        public async Task<IActionResult> LoadMore(int skip = 0, int take = 2)
+
+        // Supports Load More + Search
+        public async Task<IActionResult> LoadMore(int skip = 0, int take = 2, string? search = null)
         {
-            var offers = await _context.SpecialOffers
+            var query = _context.SpecialOffers.AsQueryable();
+
+            // Apply search filter if provided
+            if (!string.IsNullOrEmpty(search))
+            {
+                query = query.Where(o => o.Name.Contains(search) || o.Description.Contains(search));
+            }
+
+            var offers = await query
                 .OrderBy(o => o.Id)
                 .Skip(skip)
                 .Take(take)

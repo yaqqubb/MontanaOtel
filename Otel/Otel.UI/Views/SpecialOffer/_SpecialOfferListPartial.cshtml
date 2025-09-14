@@ -8,19 +8,25 @@
 {
     <div class="col-lg-6 col-sm-12 mb-4">
         <div class="department_main_box">
-            <div class="offer_thumb">
+            <div class="offer_thumb mb-3">
                 <img src="@(string.IsNullOrEmpty(offer.ImagePath)
                              ? Url.Content("~/images/default-offer.jpg")
                              : Url.Content(offer.ImagePath))"
-                     alt="@offer.Name" />
+                     alt="@offer.Name"
+                     class="img-fluid rounded"
+                     style="max-height: 220px; object-fit: cover; width: 100%;" />
             </div>
 
             <div class="department_info">
                 <div class="number_text">@offerCount.ToString("00")</div>
                 <h3 class="care_text">@offer.Name</h3>
                 <p class="department_description">@offer.Description</p>
-                <p class="department_description"><strong>Price:</strong> $@offer.TotalAmount</p>
-                <p class="department_description"><strong>Valid until:</strong> @offer.ValidityDate.ToString("MMMM dd, yyyy")</p>
+                <p class="department_description">
+                    <strong>Price:</strong> $@offer.TotalAmount
+                </p>
+                <p class="department_description">
+                    <strong>Valid until:</strong> @offer.ValidityDate.ToString("MMMM dd, yyyy")
+                </p>
             </div>
         </div>
     </div>

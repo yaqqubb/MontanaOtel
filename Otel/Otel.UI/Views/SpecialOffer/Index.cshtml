@@ -3,9 +3,19 @@
 <div class="treatment_section">
     <div class="container">
         <h1 class="treatment_taital">Special Offers</h1>
-        <p class="text-center" style="color: #6d6d6d; font-size: 16px; margin-top: 20px; margin-bottom: 0;">
+        <p class="text-center" style="color: #6d6d6d; font-size: 16px; margin-top: 20px; margin-bottom: 20px;">
             Check out our exclusive offers and discounts. Grab them before they expire!
         </p>
+
+        <!-- Search bar -->
+        <div class="row mb-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="input-group">
+                    <input type="text" id="searchBox" class="form-control" placeholder="Search offers...">
+                    <button id="searchBtn" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
 
         <div class="treatment_section_2">
             <div class="row" id="offer-container">
@@ -24,9 +34,16 @@
     <script>
         let skip = 0;
         const take = 2; // Load 2 offers at a time
+        let searchQuery = "";
 
-        function loadOffers() {
-            $.get('@Url.Action("LoadMore", "SpecialOffer")', { skip: skip, take: take }, function (data) {
+        function loadOffers(reset = false) {
+            if (reset) {
+                skip = 0;
+                $('#offer-container').html(''); // Clear previous results
+                $('#loadMoreBtn').show();
+            }
+
+            $.get('@Url.Action("LoadMore", "SpecialOffer")', { skip: skip, take: take, search: searchQuery }, function (data) {
                 if (data.trim() === '') {
                     $('#loadMoreBtn').hide();
                 } else {
@@ -37,15 +54,30 @@
         }
 
         $(document).ready(function () {
-            loadOffers(); // Load first 2 offers
+            // Load first offers on page load
+            loadOffers();
 
+            // Load more offers on button click
             $('#loadMoreBtn').click(function () {
                 loadOffers();
+            });
+
+            // Search button click
+            $('#searchBtn').click(function () {
+                searchQuery = $('#searchBox').val();
+                loadOffers(true); // Reset results for new search
+            });
+
+            // Search on Enter key press
+            $('#searchBox').keyup(function (e) {
+                if (e.key === 'Enter') {
+                    searchQuery = $('#searchBox').val();
+                    loadOffers(true);
+                }
             });
         });
     </script>
 }
-
 <style>
     /* Page-specific CSS */
     .treatment_section {
