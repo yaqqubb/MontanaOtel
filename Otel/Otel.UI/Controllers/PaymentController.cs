@@ -15,9 +15,8 @@ namespace Otel.UI.Controllers
             _context = context;
         }
 
-        // Stripe Checkout session oluştur
         [HttpPost]
-        [IgnoreAntiforgeryToken] // AJAX ile test için
+        [IgnoreAntiforgeryToken]
         public async Task<IActionResult> CreateCheckoutSession(int appointmentId)
         {
             var appointment = await _context.Appointments
@@ -38,7 +37,7 @@ namespace Otel.UI.Controllers
                     {
                         PriceData = new SessionLineItemPriceDataOptions
                         {
-                            UnitAmountDecimal = appointment.TotalPrice * 100, // Stripe cent cinsinden
+                            UnitAmountDecimal = appointment.TotalPrice * 100,
                             Currency = "usd",
                             ProductData = new SessionLineItemPriceDataProductDataOptions
                             {
@@ -60,7 +59,6 @@ namespace Otel.UI.Controllers
             return Content(session.Url);
         }
 
-        // Ödeme başarılı → Paid = true
         public async Task<IActionResult> PaymentSuccess(int appointmentId)
         {
             var appointment = await _context.Appointments

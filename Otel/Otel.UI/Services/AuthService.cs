@@ -9,10 +9,7 @@ namespace Otel.UI.Services
     {
         public static IServiceCollection AddCustomAuth(this IServiceCollection services)
         {
-            // HttpContextAccessor (Session ve Auth için gerekli)
             services.AddHttpContextAccessor();
-
-            // Session
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
             {
@@ -21,7 +18,6 @@ namespace Otel.UI.Services
                 options.Cookie.IsEssential = true;
             });
 
-            // Cookie ve Authorization
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/Account/Login";

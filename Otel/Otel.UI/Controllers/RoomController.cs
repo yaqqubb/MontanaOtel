@@ -15,14 +15,12 @@ namespace Otel.UI.Controllers
 
         public IActionResult Index()
         {
-            // Odaları RoomType bilgisiyle birlikte çekiyoruz
             var rooms = _context.Rooms.Include(r => r.RoomType).ToList();
             return View(rooms);
         }
 
         public async Task<IActionResult> LoadMore(int skip = 0, int take = 2)
         {
-            // Get rooms with their RoomType
             var rooms = await _context.Rooms
                 .Include(r => r.RoomType)
                 .OrderBy(r => r.Id)
@@ -30,7 +28,7 @@ namespace Otel.UI.Controllers
                 .Take(take)
                 .ToListAsync();
 
-            ViewBag.Skip = skip; // keep track of how many rooms are already loaded
+            ViewBag.Skip = skip;
             return PartialView("_RoomListPartial", rooms);
         }
 

@@ -15,8 +15,6 @@ namespace Otel.UI.Areas.Admin.Controllers
         {
             _context = context;
         }
-
-        // GET: Tüm adminleri listele
         public IActionResult Index()
         {
             var admins = _context.AdminUsers.ToList();
@@ -25,7 +23,6 @@ namespace Otel.UI.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
-            // Enum değerlerini SelectListItem listesine dönüştür
             ViewBag.Roles = Enum.GetValues(typeof(AdminRole))
                                 .Cast<AdminRole>()
                                 .Select(r => new SelectListItem
@@ -38,11 +35,9 @@ namespace Otel.UI.Areas.Admin.Controllers
             return View();
         }
 
-        // POST: Yeni admin ekle
         [HttpPost]
         public IActionResult Create(string username, string password, AdminRole role)
         {
-            // Enum listesi tekrar view'a gönderilmeli (hata durumunda)
             ViewBag.Roles = Enum.GetValues(typeof(AdminRole))
                                 .Cast<AdminRole>()
                                 .Select(r => new SelectListItem
@@ -71,15 +66,12 @@ namespace Otel.UI.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: Admin düzenleme sayfası
-        // GET: Admin düzenleme sayfası
         public IActionResult Edit(int id)
         {
             var admin = _context.AdminUsers.FirstOrDefault(u => u.Id == id);
             if (admin == null)
                 return NotFound();
 
-            // Enum değerlerini SelectListItem listesine dönüştür
             ViewBag.Roles = Enum.GetValues(typeof(AdminRole))
                                 .Cast<AdminRole>()
                                 .Select(r => new SelectListItem
@@ -93,7 +85,6 @@ namespace Otel.UI.Areas.Admin.Controllers
             return View(admin);
         }
 
-        // POST: Admin düzenle
         [HttpPost]
         public IActionResult Edit(int id, string username, string password, AdminRole role)
         {
@@ -101,7 +92,6 @@ namespace Otel.UI.Areas.Admin.Controllers
             if (admin == null)
                 return NotFound();
 
-            // Enum listesi tekrar view'a gönderilmeli (hata durumunda)
             ViewBag.Roles = Enum.GetValues(typeof(AdminRole))
                                 .Cast<AdminRole>()
                                 .Select(r => new SelectListItem
@@ -120,7 +110,6 @@ namespace Otel.UI.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: Admin silme
         public IActionResult Delete(int id)
         {
             var admin = _context.AdminUsers.FirstOrDefault(u => u.Id == id);

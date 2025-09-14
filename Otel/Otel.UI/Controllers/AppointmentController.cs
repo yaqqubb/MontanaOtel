@@ -17,12 +17,10 @@ namespace Otel.UI.Controllers
             _context = context;
         }
 
-        // GET: /Appointment/
         public IActionResult Index()
         {
             ViewBag.RoomTypes = _context.RoomTypes.ToList();
 
-            // Model her zaman initialize edilmiş şekilde gönderiliyor
             var model = new Appointment
             {
                 FullName = string.Empty,
@@ -39,7 +37,6 @@ namespace Otel.UI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Appointment model)
         {
-            // Model null gelirse initialize et
             if (model == null)
                 model = new Appointment
                 {
@@ -53,7 +50,6 @@ namespace Otel.UI.Controllers
             if (!ModelState.IsValid)
                 return View("Index", model);
 
-            // Seçilen RoomType
             var roomType = await _context.RoomTypes.FindAsync(model.RoomTypeId);
             if (roomType == null)
             {
@@ -61,7 +57,6 @@ namespace Otel.UI.Controllers
                 return View("Index", model);
             }
 
-            // Gece sayısı ve toplam fiyat
             int nights = (model.CheckOutDate - model.CheckInDate).Days;
             if (nights <= 0)
             {
@@ -71,11 +66,9 @@ namespace Otel.UI.Controllers
 
             model.TotalPrice = roomType.Price * nights;
 
-            // Rezervasyonu kaydet
             _context.Appointments.Add(model);
             await _context.SaveChangesAsync();
 
-            // Stripe Checkout Session oluştur
             var options = new SessionCreateOptions
             {
                 PaymentMethodTypes = new List<string> { "card" },
@@ -103,11 +96,9 @@ namespace Otel.UI.Controllers
             var service = new SessionService();
             var session = await service.CreateAsync(options);
 
-            // Checkout URL’i frontend’e JSON ile gönder
             return Json(new { success = true, url = session.Url });
         }
 
-        // Ödeme başarılıysa success sayfası
         public async Task<IActionResult> Success(int id)
         {
             var appointment = await _context.Appointments
@@ -120,7 +111,6 @@ namespace Otel.UI.Controllers
             return View(appointment);
         }
 
-        // Ödeme iptal ise (isteğe bağlı)
         public IActionResult Cancel()
         {
             ViewBag.Message = "❌ Payment was canceled. Please try again.";

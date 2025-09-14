@@ -27,7 +27,6 @@ namespace Otel.UI.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid) return View(roomType);
 
-            // Price validation: 0 veya negatif olamaz
             if (roomType.Price <= 0)
             {
                 ModelState.AddModelError("Price", "Price must be greater than 0.");
@@ -57,7 +56,6 @@ namespace Otel.UI.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid) return View(roomType);
 
-            // Price validation
             if (roomType.Price <= 0)
             {
                 ModelState.AddModelError("Price", "Price must be greater than 0.");

@@ -14,18 +14,15 @@ namespace Otel.UI.Areas.Admin.Controllers
             _specialOfferService = specialOfferService;
         }
 
-        // Listeleme
         public async Task<IActionResult> Index()
         {
             var offers = await _specialOfferService.GetAllAsync();
             return View(offers);
         }
 
-        // Create GET
         [HttpGet]
         public IActionResult Create() => View();
 
-        // Create POST
         [HttpPost]
         public async Task<IActionResult> Create(SpecialOffer offer, IFormFile? ImageFile)
         {
@@ -43,7 +40,6 @@ namespace Otel.UI.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // Edit GET
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
@@ -52,7 +48,6 @@ namespace Otel.UI.Areas.Admin.Controllers
             return View(offer);
         }
 
-        // Edit POST
         [HttpPost]
         public async Task<IActionResult> Edit(SpecialOffer offer, IFormFile? ImageFile)
         {
@@ -78,7 +73,6 @@ namespace Otel.UI.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // Details
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
@@ -87,7 +81,6 @@ namespace Otel.UI.Areas.Admin.Controllers
             return View(offer);
         }
 
-        // Delete
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {

@@ -11,29 +11,29 @@ namespace Otel.DAL.DataContext.Entities
     {
         [Required]
         [StringLength(100)]
-        public string FullName { get; set; } = null!; // Rezervasiya edən şəxsin adı
+        public string FullName { get; set; } = null!; 
 
         [Required]
         [Phone]
-        public string PhoneNumber { get; set; } = null!; // Telefon nömrəsi
+        public string PhoneNumber { get; set; } = null!;
 
         [Required]
         [EmailAddress]
-        public string Email { get; set; } = null!; // Email ünvanı
+        public string Email { get; set; } = null!; 
 
         [Required]
-        public int RoomTypeId { get; set; } // Seçilən otaq tipi FK
-        public RoomType? RoomType { get; set; } // Navigation Property
+        public int RoomTypeId { get; set; } 
+        public RoomType? RoomType { get; set; } 
 
         [Required]
-        public DateTime CheckInDate { get; set; } // Giriş tarixi
+        public DateTime CheckInDate { get; set; }
 
         [Required]
-        public DateTime CheckOutDate { get; set; } // Çıxış tarixi
+        public DateTime CheckOutDate { get; set; }
 
         [Required]
         [Range(0, double.MaxValue)]
-        public decimal TotalPrice { get; set; } // Ümumi qiymət
+        public decimal TotalPrice { get; set; } 
         public bool? Paid { get; set; }
     }
 }

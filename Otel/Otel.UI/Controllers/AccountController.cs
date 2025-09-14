@@ -22,7 +22,6 @@ namespace Otel.UI.Controllers
             _mailService = mailService;
         }
 
-        // REGISTER
         [HttpGet]
         public IActionResult Register()
         {
@@ -52,7 +51,6 @@ namespace Otel.UI.Controllers
             return RedirectToAction("Login", "Account");
         }
 
-        // LOGIN
         [HttpGet]
         public IActionResult Login()
         {
@@ -88,7 +86,6 @@ namespace Otel.UI.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        // LOGOUT
         [HttpPost]
         //public async Task<IActionResult> Logout()
         //{
@@ -100,11 +97,9 @@ namespace Otel.UI.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home"); // <-- redirect to Home page
+            return RedirectToAction("Index", "Home");
         }
 
-
-        // FORGOT PASSWORD
         [HttpGet]
         public IActionResult ForgotPassword()
         {
@@ -120,7 +115,6 @@ namespace Otel.UI.Controllers
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
             {
-                // Güvenlik: email bulunmasa bile aynı mesaj göster
                 ViewBag.Message = "If the email exists, a reset link has been sent.";
                 return View();
             }
@@ -145,7 +139,6 @@ namespace Otel.UI.Controllers
             return View();
         }
 
-        // RESET PASSWORD
         [HttpGet]
         public IActionResult ResetPassword(string resetToken, string email)
         {

@@ -4,7 +4,6 @@ namespace Otel.UI.Areas.Admin.Models
 {
     public class AdminLoginViewModel
     {
-
         [Required(ErrorMessage = "Username is required")]
         public string UserName { get; set; }
 

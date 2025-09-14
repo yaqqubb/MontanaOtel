@@ -1,8 +1,5 @@
 ﻿@model IEnumerable<Otel.DAL.DataContext.Entities.Room>
 
-<!-- rooms section start -->
-
-
 <div class="treatment_section">
     <div class="container">
         <h1 class="treatment_taital">Our Rooms</h1>
@@ -12,7 +9,6 @@
 
         <div class="treatment_section_2">
             <div class="row" id="room-container">
-                <!-- First 2 rooms will be loaded via AJAX -->
             </div>
         </div>
 
@@ -26,7 +22,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         let skip = 0;
-        const take = 2; // Load 2 rooms at a time
+        const take = 2;
 
         function loadRooms() {
             $.get('@Url.Action("LoadMore", "Room")', { skip: skip, take: take }, function (data) {
@@ -40,7 +36,7 @@
         }
 
         $(document).ready(function () {
-            loadRooms(); // Load first 2 rooms
+            loadRooms();
 
             $('#loadMoreBtn').click(function () {
                 loadRooms();
@@ -48,11 +44,9 @@
         });
     </script>
     <style>
-        /* Add top padding so content is not stuck under the header */
         .treatment_section {
-            padding-top: 100px; /* adjust as needed based on header height */
+            padding-top: 100px; 
         }
     </style>
  
 }
-<!-- rooms section end -->

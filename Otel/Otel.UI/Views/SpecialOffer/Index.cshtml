@@ -7,7 +7,6 @@
             Check out our exclusive offers and discounts. Grab them before they expire!
         </p>
 
-        <!-- Search bar -->
         <div class="row mb-4">
             <div class="col-md-6 offset-md-3">
                 <div class="input-group">
@@ -19,7 +18,6 @@
 
         <div class="treatment_section_2">
             <div class="row" id="offer-container">
-                <!-- First 2 offers will be loaded via AJAX -->
             </div>
         </div>
 
@@ -33,13 +31,13 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         let skip = 0;
-        const take = 2; // Load 2 offers at a time
+        const take = 2;
         let searchQuery = "";
 
         function loadOffers(reset = false) {
             if (reset) {
                 skip = 0;
-                $('#offer-container').html(''); // Clear previous results
+                $('#offer-container').html(''); 
                 $('#loadMoreBtn').show();
             }
 
@@ -54,21 +52,17 @@
         }
 
         $(document).ready(function () {
-            // Load first offers on page load
             loadOffers();
 
-            // Load more offers on button click
             $('#loadMoreBtn').click(function () {
                 loadOffers();
             });
 
-            // Search button click
             $('#searchBtn').click(function () {
                 searchQuery = $('#searchBox').val();
-                loadOffers(true); // Reset results for new search
+                loadOffers(true);
             });
 
-            // Search on Enter key press
             $('#searchBox').keyup(function (e) {
                 if (e.key === 'Enter') {
                     searchQuery = $('#searchBox').val();

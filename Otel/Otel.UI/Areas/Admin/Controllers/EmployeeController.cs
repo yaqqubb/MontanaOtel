@@ -17,14 +17,12 @@ namespace Otel.UI.Areas.Admin.Controllers
             _workService = workService;
         }
 
-        // Listeleme
         public async Task<IActionResult> Index()
         {
             var employees = await _employeeService.GetAllAsync(includeProperties: "Work");
             return View(employees);
         }
 
-        // Create GET
         [HttpGet]
         public async Task<IActionResult> Create()
         {
@@ -33,7 +31,6 @@ namespace Otel.UI.Areas.Admin.Controllers
             return View();
         }
 
-        // Create POST
         [HttpPost]
         public async Task<IActionResult> Create(Employee employee, IFormFile? ImageFile)
         {
@@ -60,7 +57,6 @@ namespace Otel.UI.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // Edit GET
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
@@ -73,7 +69,6 @@ namespace Otel.UI.Areas.Admin.Controllers
             return View(employee);
         }
 
-        // Edit POST
         [HttpPost]
         public async Task<IActionResult> Edit(Employee employee, IFormFile? ImageFile)
         {
@@ -99,7 +94,6 @@ namespace Otel.UI.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // Details
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
@@ -109,7 +103,6 @@ namespace Otel.UI.Areas.Admin.Controllers
             return View(employee);
         }
 
-        // Delete
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
@@ -118,7 +111,6 @@ namespace Otel.UI.Areas.Admin.Controllers
         }
 
         #region Helpers
-
         private async Task<string> SaveImageAsync(IFormFile imageFile)
         {
             var uploads = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
@@ -134,7 +126,6 @@ namespace Otel.UI.Areas.Admin.Controllers
 
             return "/uploads/" + fileName;
         }
-
         #endregion
     }
 }
