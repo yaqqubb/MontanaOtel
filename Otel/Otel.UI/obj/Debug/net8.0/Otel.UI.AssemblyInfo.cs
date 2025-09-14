@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Otel.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3559a0940854db9ccf7d69d439c69b3d6a78fc9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a136e7d1d3bfca2f3451189ab486c3183e45e59")]
 [assembly: System.Reflection.AssemblyProductAttribute("Otel.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Otel.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

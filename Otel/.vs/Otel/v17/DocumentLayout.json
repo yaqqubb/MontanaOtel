@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4232D786-571E-494F-BD1A-0CFC328B9BF6}|Otel.UI\\Otel.UI.csproj|c:\\users\\ahmed\\desktop\\otel\\otel\\otel.ui\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4232D786-571E-494F-BD1A-0CFC328B9BF6}|Otel.UI\\Otel.UI.csproj|solutionrelative:otel.ui\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4232D786-571E-494F-BD1A-0CFC328B9BF6}|Otel.UI\\Otel.UI.csproj|c:\\users\\ahmed\\desktop\\otel\\otel\\otel.ui\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{4232D786-571E-494F-BD1A-0CFC328B9BF6}|Otel.UI\\Otel.UI.csproj|solutionrelative:otel.ui\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -117,7 +121,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -141,7 +145,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Otel.UI\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\appsettings.Development.json",
+              "RelativeToolTip": "Otel.UI\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-14T13:34:25.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Success.cshtml",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Views\\Appointment\\Success.cshtml",
               "RelativeDocumentMoniker": "Otel.UI\\Views\\Appointment\\Success.cshtml",
@@ -153,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ahmed\\AppData\\Local\\Temp\\.vsdbgsrc\\551e39ac03ebf83396fab45e8d23bc084aa27489b0bf9d7adadca39aee88a4ee\\Program.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\551e39ac03ebf83396fab45e8d23bc084aa27489b0bf9d7adadca39aee88a4ee\\Program.cs",
@@ -165,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Views\\Appointment\\Create.cshtml",
               "RelativeDocumentMoniker": "Otel.UI\\Views\\Appointment\\Create.cshtml",
@@ -177,7 +194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "20250914121035_Payment.cs",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.DAL\\Migrations\\20250914121035_Payment.cs",
               "RelativeDocumentMoniker": "Otel.DAL\\Migrations\\20250914121035_Payment.cs",
@@ -189,7 +206,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Appointment.cs",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.DAL\\DataContext\\Entities\\Appointment.cs",
               "RelativeDocumentMoniker": "Otel.DAL\\DataContext\\Entities\\Appointment.cs",
@@ -201,7 +218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AppointmentController.cs",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Controllers\\AppointmentController.cs",
               "RelativeDocumentMoniker": "Otel.UI\\Controllers\\AppointmentController.cs",
@@ -213,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "PaymentController.cs",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Controllers\\PaymentController.cs",
               "RelativeDocumentMoniker": "Otel.UI\\Controllers\\PaymentController.cs",
@@ -225,7 +242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Program.cs",
               "RelativeDocumentMoniker": "Otel.UI\\Program.cs",
@@ -237,20 +254,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\appsettings.json",
               "RelativeDocumentMoniker": "Otel.UI\\appsettings.json",
               "ToolTip": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\appsettings.json",
               "RelativeToolTip": "Otel.UI\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAWAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-09-14T11:56:36.357Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Otel.UI\\Controllers\\HomeController.cs",
@@ -262,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Otel.UI\\Controllers\\AccountController.cs",
@@ -274,7 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Otel.UI\\Views\\Shared\\_Layout.cshtml",
@@ -286,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Otel.UI\\Views\\_ViewImports.cshtml",
@@ -298,7 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Otel.UI\\Views\\_ViewStart.cshtml",
@@ -310,7 +327,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Otel.UI\\Views\\Home\\Index.cshtml",
@@ -322,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "Otel.UI\\Views\\Shared\\Error.cshtml",
@@ -334,7 +351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Views\\Appointment\\Index.cshtml",
               "RelativeDocumentMoniker": "Otel.UI\\Views\\Appointment\\Index.cshtml",
@@ -346,7 +363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Views\\SpecialOffer\\Index.cshtml",
               "RelativeDocumentMoniker": "Otel.UI\\Views\\SpecialOffer\\Index.cshtml",
@@ -358,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "SpecialOfferController.cs",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Controllers\\SpecialOfferController.cs",
               "RelativeDocumentMoniker": "Otel.UI\\Controllers\\SpecialOfferController.cs",
@@ -370,7 +387,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "SpecialOffer.cs",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.DAL\\DataContext\\Entities\\SpecialOffer.cs",
               "RelativeDocumentMoniker": "Otel.DAL\\DataContext\\Entities\\SpecialOffer.cs",
@@ -382,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "_SpecialOfferListPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Views\\SpecialOffer\\_SpecialOfferListPartial.cshtml",
               "RelativeDocumentMoniker": "Otel.UI\\Views\\SpecialOffer\\_SpecialOfferListPartial.cshtml",
@@ -394,7 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "bootstrap.min.css",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\wwwroot\\css\\bootstrap.min.css",
               "RelativeDocumentMoniker": "Otel.UI\\wwwroot\\css\\bootstrap.min.css",
@@ -406,7 +423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "_RoomListPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Views\\Room\\_RoomListPartial.cshtml",
               "RelativeDocumentMoniker": "Otel.UI\\Views\\Room\\_RoomListPartial.cshtml",
@@ -418,7 +435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "RoomController.cs",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Controllers\\RoomController.cs",
               "RelativeDocumentMoniker": "Otel.UI\\Controllers\\RoomController.cs",
@@ -430,7 +447,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "RoomStatus.cs",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.DAL\\DataContext\\Entities\\RoomStatus.cs",
               "RelativeDocumentMoniker": "Otel.DAL\\DataContext\\Entities\\RoomStatus.cs",
@@ -442,7 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Room.cs",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.DAL\\DataContext\\Entities\\Room.cs",
               "RelativeDocumentMoniker": "Otel.DAL\\DataContext\\Entities\\Room.cs",
@@ -454,7 +471,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ahmed\\Desktop\\Otel\\Otel\\Otel.UI\\Views\\Room\\Index.cshtml",
               "RelativeDocumentMoniker": "Otel.UI\\Views\\Room\\Index.cshtml",
