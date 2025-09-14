@@ -1,0 +1,16 @@
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\bin\Debug\net8.0\Otel.Business.deps.json
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\bin\Debug\net8.0\Otel.Business.dll
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\bin\Debug\net8.0\Otel.Business.pdb
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\bin\Debug\net8.0\Otel.DAL.dll
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\bin\Debug\net8.0\Otel.DAL.pdb
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\obj\Debug\net8.0\Otel.Business.csproj.AssemblyReference.cache
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\obj\Debug\net8.0\Otel.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\obj\Debug\net8.0\Otel.Business.AssemblyInfoInputs.cache
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\obj\Debug\net8.0\Otel.Business.AssemblyInfo.cs
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\obj\Debug\net8.0\Otel.Business.csproj.CoreCompileInputs.cache
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\obj\Debug\net8.0\Otel.Business.sourcelink.json
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\obj\Debug\net8.0\Otel.Bus.DD00D738.Up2Date
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\obj\Debug\net8.0\Otel.Business.dll
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\obj\Debug\net8.0\refint\Otel.Business.dll
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\obj\Debug\net8.0\Otel.Business.pdb
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.Business\obj\Debug\net8.0\ref\Otel.Business.dll

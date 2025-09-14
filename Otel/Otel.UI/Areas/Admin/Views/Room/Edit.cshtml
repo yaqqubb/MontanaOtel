@@ -1,0 +1,57 @@
+﻿@model Otel.DAL.DataContext.Entities.Room
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <!-- Room Number -->
+    <div class="form-group mb-3">
+        <label asp-for="RoomNumber" class="control-label"></label>
+        <input asp-for="RoomNumber" class="form-control" />
+        <span asp-validation-for="RoomNumber" class="text-danger"></span>
+    </div>
+
+    <!-- Room Type -->
+    <div class="form-group mb-3">
+        <label asp-for="RoomTypeId" class="control-label"></label>
+        <select asp-for="RoomTypeId" class="form-control" asp-items="ViewBag.RoomTypes">
+            <option value="">-- Select Room Type --</option>
+        </select>
+        <span asp-validation-for="RoomTypeId" class="text-danger"></span>
+    </div>
+
+
+
+    <!-- Status -->
+    <div class="form-group mb-3">
+        <label asp-for="Status" class="control-label"></label>
+        <select asp-for="Status" class="form-control" asp-items="ViewBag.RoomStatuses">
+            <option value="">-- Select Status --</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <!-- Existing Image -->
+    @if (!string.IsNullOrEmpty(Model.ImagePath))
+    {
+        <div class="form-group mb-3">
+            <label>Current Image:</label>
+            <br />
+            <img src="@Model.ImagePath" alt="Room Image" width="100" height="100" />
+        </div>
+    }
+
+    <!-- Upload New Image -->
+    <div class="form-group mb-3">
+        <label>Change Image (optional)</label>
+        <input type="file" name="ImageFile" class="form-control" />
+    </div>
+
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

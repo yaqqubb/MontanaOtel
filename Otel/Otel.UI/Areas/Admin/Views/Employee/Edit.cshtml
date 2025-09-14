@@ -1,0 +1,29 @@
+﻿@model Otel.DAL.DataContext.Entities.Employee
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+<h2>Edit Employee</h2>
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WorkId"></label>
+        <select asp-for="WorkId" asp-items="ViewBag.Works" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label>Image</label>
+        <input type="file" name="ImageFile" class="form-control" />
+        <img src="@Model.ImagePath" alt="Employee" width="80" />
+    </div>
+
+    <button class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

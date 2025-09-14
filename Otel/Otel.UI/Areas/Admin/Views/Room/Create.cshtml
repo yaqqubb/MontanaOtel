@@ -1,0 +1,46 @@
+﻿@model Otel.DAL.DataContext.Entities.Room
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+    <!-- Room Number -->
+    <div class="form-group mb-3">
+        <label asp-for="RoomNumber" class="control-label"></label>
+        <input asp-for="RoomNumber" class="form-control" />
+        <span asp-validation-for="RoomNumber" class="text-danger"></span>
+    </div>
+
+    <!-- Room Type -->
+    <div class="form-group mb-3">
+        <label asp-for="RoomTypeId" class="control-label">Room Type</label>
+        <select asp-for="RoomTypeId" class="form-control" asp-items="ViewBag.RoomTypes">
+            <option value="">-- Select Room Type --</option>
+        </select>
+        <span asp-validation-for="RoomTypeId" class="text-danger"></span>
+    </div>
+
+   
+
+    <!-- Status -->
+    <div class="form-group mb-3">
+        <label asp-for="Status" class="control-label"></label>
+        <select asp-for="Status" class="form-control" asp-items="ViewBag.RoomStatuses">
+            <option value="">-- Select Status --</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <!-- Room Image -->
+    <div class="form-group mb-3">
+        <label>Room Image</label>
+        <input type="file" name="ImageFile" class="form-control" />
+        <span asp-validation-for="ImagePath" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

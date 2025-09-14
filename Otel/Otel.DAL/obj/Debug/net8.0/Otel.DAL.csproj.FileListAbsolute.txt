@@ -1,0 +1,15 @@
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\bin\Debug\net8.0\Otel.DAL.deps.json
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\bin\Debug\net8.0\Otel.DAL.runtimeconfig.json
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\bin\Debug\net8.0\Otel.DAL.dll
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\bin\Debug\net8.0\Otel.DAL.pdb
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\obj\Debug\net8.0\Otel.DAL.csproj.AssemblyReference.cache
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\obj\Debug\net8.0\Otel.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\obj\Debug\net8.0\Otel.DAL.AssemblyInfoInputs.cache
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\obj\Debug\net8.0\Otel.DAL.AssemblyInfo.cs
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\obj\Debug\net8.0\Otel.DAL.csproj.CoreCompileInputs.cache
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\obj\Debug\net8.0\Otel.DAL.sourcelink.json
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\obj\Debug\net8.0\Otel.DAL.dll
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\obj\Debug\net8.0\refint\Otel.DAL.dll
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\obj\Debug\net8.0\Otel.DAL.pdb
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\obj\Debug\net8.0\Otel.DAL.genruntimeconfig.cache
+C:\Users\ahmed\Desktop\Otel\Otel\Otel.DAL\obj\Debug\net8.0\ref\Otel.DAL.dll

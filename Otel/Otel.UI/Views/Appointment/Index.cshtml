@@ -1,0 +1,137 @@
+﻿@model Otel.DAL.DataContext.Entities.Appointment
+@{
+    ViewData["Title"] = "Book Appointment";
+}
+
+<section class="appointment_section"
+         style="background-image:url('@Url.Content("~/img/banner/banner2.png")');
+                background-size:cover;
+                background-position:center;
+                padding:80px 0;">
+    <div class="container">
+        <div class="appointment_box bg-light p-4 rounded shadow">
+            <h1 class="appointment_taital mb-4">Book <span style="color: #0cb7d6;">Appointment</span></h1>
+
+            <form id="appointmentForm" asp-action="Create" method="post">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Full Name</label>
+                        <input asp-for="FullName" class="form-control" required />
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Phone Number</label>
+                        <input asp-for="PhoneNumber" class="form-control" required />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Email</label>
+                        <input asp-for="Email" type="email" class="form-control" required />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Room Type</label>
+                        <select asp-for="RoomTypeId" id="roomTypeSelect" class="form-control" required>
+                            <option value="">Select Room Type</option>
+                            @foreach (var room in ViewBag.RoomTypes)
+                            {
+                                <option value="@room.Id" data-price="@room.Price">@room.Name</option>
+                            }
+                        </select>
+                        <span asp-validation-for="RoomTypeId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Check-In Date</label>
+                        <input asp-for="CheckInDate" id="checkIn" type="date" class="form-control"
+                               value="@DateTime.Now.ToString("yyyy-MM-dd")" required />
+                        <span asp-validation-for="CheckInDate" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Check-Out Date</label>
+                        <input asp-for="CheckOutDate" id="checkOut" type="date" class="form-control"
+                               value="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" required />
+                        <span asp-validation-for="CheckOutDate" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Total Price</label>
+                        <input asp-for="TotalPrice" id="totalPrice" type="number" class="form-control" step="0.01" readonly />
+                        <span asp-validation-for="TotalPrice" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary">Book Appointment</button>
+                    </div>
+                </div>
+            </form>
+
+            @if (ViewBag.SuccessMessage != null)
+            {
+                <div class="alert alert-success mt-3">
+                    @ViewBag.SuccessMessage
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // Total fiyat hesaplama
+        function calculateTotal() {
+            const roomSelect = document.getElementById("roomTypeSelect");
+            const checkIn = document.getElementById("checkIn").value;
+            const checkOut = document.getElementById("checkOut").value;
+            const totalPriceInput = document.getElementById("totalPrice");
+
+            if (!roomSelect.value || !checkIn || !checkOut) {
+                totalPriceInput.value = 0;
+                return;
+            }
+
+            const roomPrice = parseFloat(roomSelect.selectedOptions[0].dataset.price);
+            const checkInDate = new Date(checkIn);
+            const checkOutDate = new Date(checkOut);
+
+            const timeDiff = checkOutDate - checkInDate;
+            const nights = timeDiff / (1000 * 60 * 60 * 24);
+
+            if (nights <= 0) {
+                totalPriceInput.value = 0;
+                return;
+            }
+
+            totalPriceInput.value = (roomPrice * nights).toFixed(2);
+        }
+
+        document.getElementById("roomTypeSelect").addEventListener("change", calculateTotal);
+        document.getElementById("checkIn").addEventListener("change", calculateTotal);
+        document.getElementById("checkOut").addEventListener("change", calculateTotal);
+
+        // Form submit → Stripe Checkout yönlendirme
+        $("#appointmentForm").submit(function (e) {
+            e.preventDefault();
+            $.post($(this).attr("action"), $(this).serialize(), function (response) {
+                if (response.success && response.url) {
+                    window.location.href = response.url; // Stripe Checkout sayfasına yönlendir
+                } else {
+                    alert("An error occurred. Please try again.");
+                }
+            });
+        });
+    </script>
+}

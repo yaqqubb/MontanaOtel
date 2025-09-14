@@ -1,0 +1,35 @@
+﻿@model Otel.DAL.DataContext.Entities.Room
+
+<div class="container mt-4">
+    <h2>Room Details</h2>
+
+    <div class="mb-3">
+        <label class="form-label">Room Number:</label>
+        <p class="form-control">@Model.RoomNumber</p>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Room Type:</label>
+        <p class="form-control">@Model.RoomType?.Name</p>
+    </div>
+
+
+    <div class="mb-3">
+        <label class="form-label">Status:</label>
+        <p class="form-control">@Model.Status.ToString()</p>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Room Image:</label><br />
+        @if (!string.IsNullOrEmpty(Model.ImagePath))
+        {
+            <img src="@Model.ImagePath" alt="Room Image" width="150" />
+        }
+        else
+        {
+            <p>No image available.</p>
+        }
+    </div>
+
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

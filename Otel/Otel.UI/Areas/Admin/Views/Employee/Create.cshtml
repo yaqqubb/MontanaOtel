@@ -1,0 +1,35 @@
+﻿@model Otel.DAL.DataContext.Entities.Employee
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+    <!-- Name -->
+    <div class="form-group mb-3">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <!-- Work -->
+    <div class="form-group mb-3">
+        <label asp-for="WorkId" class="control-label">Work</label>
+        <select asp-for="WorkId" class="form-control" asp-items="ViewBag.Works">
+            <option value="">-- Select Work --</option>
+        </select>
+        <span asp-validation-for="WorkId" class="text-danger"></span>
+    </div>
+
+    <!-- Image -->
+    <div class="form-group mb-3">
+        <label>Employee Image</label>
+        <input type="file" name="ImageFile" class="form-control" />
+        <span asp-validation-for="ImagePath" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

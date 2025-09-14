@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Otel.DAL.DataContext.Entities.SpecialOffer>
+
+<div class="treatment_section">
+    <div class="container">
+        <h1 class="treatment_taital">Special Offers</h1>
+        <p class="text-center" style="color: #6d6d6d; font-size: 16px; margin-top: 20px; margin-bottom: 0;">
+            Check out our exclusive offers and discounts. Grab them before they expire!
+        </p>
+
+        <div class="treatment_section_2">
+            <div class="row" id="offer-container">
+                <!-- First 2 offers will be loaded via AJAX -->
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button id="loadMoreBtn" class="btn btn-primary">Load More</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let skip = 0;
+        const take = 2; // Load 2 offers at a time
+
+        function loadOffers() {
+            $.get('@Url.Action("LoadMore", "SpecialOffer")', { skip: skip, take: take }, function (data) {
+                if (data.trim() === '') {
+                    $('#loadMoreBtn').hide();
+                } else {
+                    $('#offer-container').append(data);
+                    skip += take;
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            loadOffers(); // Load first 2 offers
+
+            $('#loadMoreBtn').click(function () {
+                loadOffers();
+            });
+        });
+    </script>
+}
+
+<style>
+    /* Page-specific CSS */
+    .treatment_section {
+        padding-top: 100px; /* space below fixed header */
+    }
+
+    .department_main_box {
+        background-color: #ffffff;
+        padding: 25px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        border-left: 5px solid #0cb7d6;
+    }
+
+        .department_main_box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
+        }
+
+    .offer_thumb img {
+        max-height: 180px;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .line-button {
+        padding: 6px 12px;
+        border: 1px solid #0cb7d6;
+        border-radius: 5px;
+        color: #0cb7d6;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+        .line-button:hover {
+            background-color: #0cb7d6;
+            color: #fff;
+        }
+
+    .department_info {
+        margin-top: 10px;
+    }
+</style>

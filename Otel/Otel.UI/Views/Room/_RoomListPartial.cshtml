@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Otel.DAL.DataContext.Entities.Room>
+
+@{
+    int roomCount = ViewBag.Skip != null ? (int)ViewBag.Skip + 1 : 1;
+}
+
+@foreach (var room in Model)
+{
+    <div class="col-lg-6 col-sm-12 mb-4">
+        <div class="department_main_box">
+            <div class="room_thumb">
+                <img src="@(string.IsNullOrEmpty(room.ImagePath)
+                             ? Url.Content("~/images/default-room.jpg")
+                             : Url.Content(room.ImagePath))"
+                     alt="@room.RoomType?.Name"
+                     style="max-height: 180px; width: 100%; border-radius: 8px;" />
+            </div>
+
+            <div class="department_header mt-2">
+                <div class="department_title_section">
+                    <div class="number_text">@roomCount.ToString("00")</div>
+                    <div class="department_info">
+                        <h3 class="care_text">@room.RoomType?.Name</h3>
+                        <p class="department_description">Room No: @room.RoomNumber</p>
+                        <p class="department_description">Status: @room.Status</p>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+    </div>
+    roomCount++;
+}

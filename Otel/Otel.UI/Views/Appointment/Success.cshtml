@@ -1,0 +1,28 @@
+﻿@model Otel.DAL.DataContext.Entities.Appointment
+
+<div class="container mt-5">
+    <div class="alert alert-success text-center">
+        <h2>Payment Successful!</h2>
+        <p>Thank you, @Model.FullName. Your booking has been confirmed successfully.</p>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header bg-primary text-white">
+            Booking Details
+        </div>
+        <div class="card-body">
+            <p><strong>Guest Name:</strong> @Model.FullName</p>
+            <p><strong>Email:</strong> @Model.Email</p>
+            <p><strong>Phone:</strong> @Model.PhoneNumber</p>
+            <p><strong>Room Type:</strong> @(Model.RoomType?.Name ?? "N/A")</p>
+            <p><strong>Check-In:</strong> @Model.CheckInDate.ToString("f")</p>
+            <p><strong>Check-Out:</strong> @Model.CheckOutDate.ToString("f")</p>
+            <p><strong>Total Price:</strong> $@Model.TotalPrice.ToString("0.00")</p>
+            <p><strong>Payment Status:</strong> <span class="text-success">Paid</span></p>
+        </div>
+    </div>
+
+    <div class="mt-4 text-center">
+        <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+</div>

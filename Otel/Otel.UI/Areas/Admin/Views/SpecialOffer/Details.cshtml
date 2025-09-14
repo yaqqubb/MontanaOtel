@@ -1,0 +1,25 @@
+﻿@model Otel.DAL.DataContext.Entities.SpecialOffer
+@{
+    ViewData["Title"] = "Special Offer Details";
+}
+
+<h2>Special Offer Details</h2>
+
+<dl class="row">
+    <dt class="col-sm-2">Name</dt>
+    <dd class="col-sm-10">@Model.Name</dd>
+
+    <dt class="col-sm-2">Description</dt>
+    <dd class="col-sm-10">@Model.Description</dd>
+
+    <dt class="col-sm-2">Amount</dt>
+    <dd class="col-sm-10">@Model.TotalAmount</dd>
+
+    <dt class="col-sm-2">Valid Until</dt>
+    <dd class="col-sm-10">@Model.ValidityDate.ToShortDateString()</dd>
+
+    <dt class="col-sm-2">Image</dt>
+    <dd class="col-sm-10"><img src="@Model.ImagePath" width="120" /></dd>
+</dl>
+
+<a asp-action="Index" class="btn btn-secondary">Back</a>

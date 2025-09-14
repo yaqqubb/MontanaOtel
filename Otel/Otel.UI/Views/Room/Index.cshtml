@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Otel.DAL.DataContext.Entities.Room>
+
+<!-- rooms section start -->
+
+
+<div class="treatment_section">
+    <div class="container">
+        <h1 class="treatment_taital">Our Rooms</h1>
+        <p class="text-center" style="color: #6d6d6d; font-size: 16px; margin-top: 20px; margin-bottom: 0;">
+            Choose from a variety of room types to find the perfect stay. Each room is equipped for comfort and style.
+        </p>
+
+        <div class="treatment_section_2">
+            <div class="row" id="room-container">
+                <!-- First 2 rooms will be loaded via AJAX -->
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button id="loadMoreBtn" class="btn btn-primary">Load More</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let skip = 0;
+        const take = 2; // Load 2 rooms at a time
+
+        function loadRooms() {
+            $.get('@Url.Action("LoadMore", "Room")', { skip: skip, take: take }, function (data) {
+                if (data.trim() === '') {
+                    $('#loadMoreBtn').hide();
+                } else {
+                    $('#room-container').append(data);
+                    skip += take;
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            loadRooms(); // Load first 2 rooms
+
+            $('#loadMoreBtn').click(function () {
+                loadRooms();
+            });
+        });
+    </script>
+    <style>
+        /* Add top padding so content is not stuck under the header */
+        .treatment_section {
+            padding-top: 100px; /* adjust as needed based on header height */
+        }
+    </style>
+ 
+}
+<!-- rooms section end -->
